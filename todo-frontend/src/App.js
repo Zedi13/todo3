@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
+
 function App() {
   const [todos, setTodos] = useState([]);
   const [texte, setTexte] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/todos')
+    fetch('${API_URL}/api/todos')
       .then(res => res.json())
       .then(data => setTodos(data));
   }, []);
@@ -14,7 +17,7 @@ function App() {
   const ajouterTodo = (e) => {
     e.preventDefault();
     if (!texte.trim()) return;
-    fetch('http://localhost:3001/api/todos', {
+    fetch('${API_URL}/api/todos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ texte, done: false })
@@ -27,12 +30,12 @@ function App() {
   };
 
   const supprimerTodo = (id) => {
-    fetch(`http://localhost:3001/api/todos/${id}`, { method: 'DELETE' })
+    fetch(`${API_URL}/api/todos/${id}`, { method: 'DELETE' })
       .then(() => setTodos(todos.filter(t => t.id !== id)));
   };
 
   const toggleDone = (todo) => {
-    fetch(`http://localhost:3001/api/todos/${todo.id}`, {
+    fetch(`${API_URL}/api/todos/${todo.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ done: !todo.done })
