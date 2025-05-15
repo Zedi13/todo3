@@ -1,0 +1,11 @@
+{
+    "projects": {
+        "frontend": {
+            "source": "todo-frontend",
+            "framework": "vite"
+        },
+        "api": {
+            "source": "back"
+        }
+    }
+}

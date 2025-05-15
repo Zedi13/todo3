@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: url('https://media.gqmagazine.fr/photos/5f83e44498c274a8707da15f/16:9/w_1280,c_limit/EkEDlDVXcAECd2b.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 3rem;
+  overflow-x: hidden;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeInContainer 0.6s ease-out forwards;
+  transform: translateY(-20px);
+  background-color: transparent;
+  opacity: 0;
+}
+
+@keyframes fadeInContainer {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInForm 0.8s ease-out;
+}
+
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+input[type="text"]:focus {
+  border-color: #6366f1;
+  outline: none;
+  background-color: #fff;
+}
+
+button {
+  padding: 0.9rem 1.1rem;
+  background-color: #6366f1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #4f46e5;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  animation: fadeInItem 0.4s ease-out;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+@keyframes fadeInItem {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+li:hover {
+  transform: scale(1.01);
+  background-color: #e0e7ff;
+}
+
+li.done {
+  background-color: #d1fae5;
+  text-decoration: line-through;
+  color: #4b5563;
+  border-color: #86efac;
+  transform: scale(0.98);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+li button {
+  background-color: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+li button:hover {
+  transform: scale(1.2);
+  color: #dc2626;
+}
