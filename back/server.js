@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+;
 
 const FIREBASE_URL = 'https://reactexo3-default-rtdb.europe-west1.firebasedatabase.app/'; // Remplace <TON_PROJECT_ID>
 
